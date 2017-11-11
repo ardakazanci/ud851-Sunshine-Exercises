@@ -59,12 +59,12 @@ public class MainActivity extends AppCompatActivity {
 
         // COMPLETED (9) Call loadWeatherData to perform the network request to get the weather
 
-        loadWeatherData();
+        loadWeatherData(); // OnCreate içerisinde aşağıda ki metot AsyncTask ' a istekte bulunacak
     }
 
     // COMPLETED (8) Create a method that will get the user's preferred location and execute your new AsyncTask and call it loadWeatherData
 
-    private void loadWeatherData() {
+    private void loadWeatherData() { // Kullanıcının isteği üzerine asynctask a istekte bulunulacak
 
         String location = SunshinePreferences.getPreferredWeatherLocation(this);
         new FetchWeatherTask().execute(location);
@@ -73,10 +73,10 @@ public class MainActivity extends AppCompatActivity {
 
     // COMPLETED (5) Create a class that extends AsyncTask to perform network requests
 
-    public class FetchWeatherTask extends AsyncTask<String, Void, String[]> {
+    public class FetchWeatherTask extends AsyncTask<String, Void, String[]> { // Ağ isteklerini gerçekleştirmek için AsyncTask
 
         @Override
-        protected String[] doInBackground(String... params) {
+        protected String[] doInBackground(String... params) { // Ağ isteklerini gerçekleştirmek için yöntem
 
             if (params.length == 0) {
 
@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         @Override
-        protected void onPostExecute(String[] weatherData) {
+        protected void onPostExecute(String[] weatherData) { // Ağ isteklerinin sonuçlarını göstermek için yöntem
             if (weatherData != null) {
 
                 for (String weatherString : weatherData) {

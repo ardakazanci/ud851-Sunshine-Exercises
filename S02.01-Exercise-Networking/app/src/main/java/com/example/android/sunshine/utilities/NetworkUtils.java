@@ -68,7 +68,7 @@ public final class NetworkUtils {
      * @param locationQuery The location that will be queried for.
      * @return The URL to use to query the weather server.
      */
-    public static URL buildUrl(String locationQuery) {
+    public static URL buildUrl(String locationQuery) { // Weather Data ' ya bağlanma linkini düenliyor.
         // COMPLETED (1) Fix this method to return the URL used to query Open Weather Map's API
 
         Uri builtUri = Uri.parse(FORECAST_BASE_URL).buildUpon()
