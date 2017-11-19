@@ -22,12 +22,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-// COMPLETED (15) Add a class called ForecastAdapter
-// COMPLETED (22) Extend RecyclerView.Adapter<ForecastAdapter.ForecastAdapterViewHolder>
-/**
- * {@link ForecastAdapter} exposes a list of weather forecasts to a
- * {@link android.support.v7.widget.RecyclerView}
- */
+
 public class ForecastAdapter extends RecyclerView.Adapter<ForecastAdapter.ForecastAdapterViewHolder> {
 
     // COMPLETED (23) Create a private string array called mWeatherData
@@ -38,11 +33,7 @@ public class ForecastAdapter extends RecyclerView.Adapter<ForecastAdapter.Foreca
 
     }
 
-    // COMPLETED (16) Create a class within ForecastAdapter called ForecastAdapterViewHolder
-    // COMPLETED (17) Extend RecyclerView.ViewHolder
-    /**
-     * Cache of the children views for a forecast list item.
-     */
+
     public class ForecastAdapterViewHolder extends RecyclerView.ViewHolder {
 
         // Within ForecastAdapterViewHolder ///////////////////////////////////////////////////////
@@ -62,17 +53,7 @@ public class ForecastAdapter extends RecyclerView.Adapter<ForecastAdapter.Foreca
     // COMPLETED (24) Override onCreateViewHolder
     // COMPLETED (25) Within onCreateViewHolder, inflate the list item xml into a view
     // COMPLETED (26) Within onCreateViewHolder, return a new ForecastAdapterViewHolder with the above view passed in as a parameter
-    /**
-     * This gets called when each new ViewHolder is created. This happens when the RecyclerView
-     * is laid out. Enough ViewHolders will be created to fill the screen and allow for scrolling.
-     *
-     * @param viewGroup The ViewGroup that these ViewHolders are contained within.
-     * @param viewType  If your RecyclerView has more than one type of item (which ours doesn't) you
-     *                  can use this viewType integer to provide a different layout. See
-     *                  {@link android.support.v7.widget.RecyclerView.Adapter#getItemViewType(int)}
-     *                  for more details.
-     * @return A new ForecastAdapterViewHolder that holds the View for each list item
-     */
+
     @Override
     public ForecastAdapterViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
         Context context = viewGroup.getContext();
@@ -86,6 +67,7 @@ public class ForecastAdapter extends RecyclerView.Adapter<ForecastAdapter.Foreca
 
     // COMPLETED (27) Override onBindViewHolder
     // COMPLETED (28) Set the text of the TextView to the weather for this list item's position
+
     /**
      * OnBindViewHolder is called by the RecyclerView to display the data at the specified
      * position. In this method, we update the contents of the ViewHolder to display the weather
@@ -104,6 +86,7 @@ public class ForecastAdapter extends RecyclerView.Adapter<ForecastAdapter.Foreca
 
     // COMPLETED (29) Override getItemCount
     // COMPLETED (30) Return 0 if mWeatherData is null, or the size of mWeatherData if it is not null
+
     /**
      * This method simply returns the number of items to display. It is used behind the scenes
      * to help layout our Views and for animations.
@@ -118,6 +101,7 @@ public class ForecastAdapter extends RecyclerView.Adapter<ForecastAdapter.Foreca
 
     // COMPLETED (31) Create a setWeatherData method that saves the weatherData to mWeatherData
     // COMPLETED (32) After you save mWeatherData, call notifyDataSetChanged
+
     /**
      * This method is used to set the weather forecast on a ForecastAdapter if we've already
      * created one. This is handy when we get new data from the web but don't want to create a
